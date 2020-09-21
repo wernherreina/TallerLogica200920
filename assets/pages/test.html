@@ -1,0 +1,265 @@
+<!doctype html>
+
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+ 
+
+    <style>
+
+    * {box-sizing: border-box;font-family:arial;}
+
+    .hide {display:none;}
+
+    .right {text-align:right;}
+
+    .error {border:1px solid Red;}
+
+ 
+
+    .nombre {width:100%}
+
+    .formulario {text-align:center;width:400px;border:1px solid #eee;padding:10px;}
+
+    .formulario label,.formulario label~input {
+
+        width: 50%;
+
+        display: inline-block;
+
+        float:left;
+
+    }
+
+    .formulario label {text-align:right;padding-right:20px;}
+
+    .formulario>div {margin-top:10px;overflow:hidden;}
+
+    .agregar {
+
+        background-color:green;
+
+        border:none;
+
+        color:white;
+
+        padding:10px 20px;
+
+    }
+
+ 
+
+    #listado {
+
+        border:1px solid #eee;
+
+        margin-top:20px;
+
+        width:400px;
+
+    }
+
+    #listado th {background-color:#eee;padding:5px 10px;}
+
+    #listado img {
+
+        cursor:pointer;
+
+    }
+
+    </style>
+
+ 
+
+</head>
+
+<body>
+
+ 
+
+<form class="formulario">
+
+    <div>
+
+        <label>Nombre del alumno</label><input type="text" name="nombre">
+
+    </div>
+
+    <div>
+
+        <label>Edad del alumno</label><input type="number" name="edad" min="3" max="100">
+
+    </div>
+
+    <div>
+
+        <br><input type="submit" value="Agregar" class="agregar">
+
+    </div>
+
+</form>
+
+ 
+
+<table id="listado" class='hide'>
+
+    <thead>
+
+        <th>Alumno</th>
+
+        <th>Edad</th>
+
+    </thead>
+
+    <tbody>
+
+    </tbody>
+
+</table>
+
+ 
+
+</body>
+
+</html>
+
+ 
+
+<script>
+
+document.querySelector("input[class=agregar]").addEventListener("click",function(e){
+
+    // cancelamos el evento submit
+
+    e.preventDefault();
+
+ 
+
+    const nombre=document.querySelector("input[name=nombre]");
+
+    const edad=document.querySelector("input[name=edad]");
+
+ 
+
+    // mostramos un error si no ha recibido el nombre
+
+    if(!nombre.value)
+
+    {
+
+        nombre.classList.add("error");
+
+        return;
+
+    }
+
+    nombre.classList.remove("error");
+
+ 
+
+    // mostramos un error si no ha recibido una edad
+
+    if(isNaN(parseInt(edad.value)) || parseInt(edad.value)<=0)
+
+    {
+
+        edad.classList.add("error");
+
+        return;
+
+    }
+
+    edad.classList.remove("error");
+
+ 
+
+    // añadimos el alumno a la tabla crando el tr, td's y el botón para eliminarlo
+
+    const tr=document.createElement("tr");
+
+ 
+
+    const tdNombre=document.createElement("td");
+
+    let txt=document.createTextNode(nombre.value);
+
+    tdNombre.appendChild(txt);
+
+    tdNombre.className="nombre";
+
+ 
+
+    const tdEdad=document.createElement("td");
+
+    txt=document.createTextNode(edad.value);
+
+    tdEdad.appendChild(txt);
+
+    tdEdad.className="right";
+
+ 
+
+    const tdRemove=document.createElement("td");
+
+    const buttonRemove=document.createElement("img");
+
+    buttonRemove.src="garbage.png";
+
+    buttonRemove.onclick=function () {
+
+        // elimina la columna
+
+        this.closest("tr").remove();
+
+ 
+
+        // Si no hay ningun elemento en la columna, escondemos la tabla
+
+        if(document.getElementById("listado").querySelector("tbody").querySelectorAll("tr").length==0)
+
+        {
+
+            document.getElementById("listado").classList.add("hide");
+
+        }
+
+    };
+
+    tdRemove.appendChild(buttonRemove);
+
+ 
+
+    tr.appendChild(tdNombre);
+
+    tr.appendChild(tdEdad);
+
+    tr.appendChild(tdRemove);
+
+ 
+
+    const tbody=document.getElementById("listado").querySelector("tbody").appendChild(tr);
+
+ 
+
+    // eliminamos la clase que tiene oculta la tabla cando no hay ningun alumno
+
+    document.getElementById("listado").classList.remove("hide");
+
+ 
+
+    //limpiamos los valores del input
+
+    edad.value="";
+
+    nombre.value="";
+
+    nombre.focus();
+
+ 
+
+});
+
+</script>

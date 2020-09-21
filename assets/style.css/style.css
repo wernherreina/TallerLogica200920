@@ -1,0 +1,140 @@
+/* .wallpaper {
+
+
+
+} 
+ */
+*{
+    Margin: 0;
+    Padding: 0;
+    Box-sizing: border-box;
+    }
+
+body {
+    background-image: url("../img/wpgreen.jpg");
+    background-color: #cccccc;
+background-repeat: no-repeat;
+ background-size: cover; 
+ background-position: center center;
+    font-family: Arial, Helvetica, sans-serif;
+    }
+
+
+
+.formContact{
+    width: 40%;
+    margin: auto;
+    margin-top: 2px;
+    display: flex;
+    flex-direction: column;
+}
+
+.contInput{
+    display: flex;
+    flex-direction: column;
+    margin-top: 10px;
+}
+
+.contInput input{
+    border: none;
+    padding: 5px 15px;
+    background-color: rgb(192, 228, 192);
+    border-radius: 5px;
+}
+
+
+.contInput label {
+    border-radius: 10px;
+}
+
+.contInput input:focus{
+    box-shadow: blue;
+}
+
+div.contInput>label{
+margin-top: 5px;
+
+
+}
+
+
+
+label{
+    color: rgb(235, 235, 235);
+}
+
+.btnEnviar{
+    margin-top: 40px;
+    align-self: center;
+    border: none;
+    border-radius: 10px;
+    padding: 15px 20px;
+    font-size: 20px;
+    cursor: pointer;
+    
+    }
+.btnEnviar:hover{
+    transform: scale(1.1);
+}
+
+.mensajeAlertaNombre, .mensajeAlertaCorreo, .mensajeAlertapwd {
+    color: red;
+    margin: 5px;
+}
+
+.mensajeAlertaInputs{
+    color: red;
+    margin: 5px;
+
+}
+
+
+.inputTyC{
+    flex-direction: row;
+    align-items: center;
+}
+.inputTyC >label{
+    order: 2;
+}
+/* .BgcAlert{
+    background-color: red !important;
+} */
+
+.tg  {border-collapse:collapse;border-spacing:0;}
+.tg td{border-width:1px;font-family:Arial, sans-serif;font-size:14px;
+  overflow:hidden;padding:10px 5px;word-break:normal;}
+.tg th{border-width:1px;font-family:Arial, sans-serif;font-size:14px;
+  font-weight:normal;overflow:hidden;padding:10px 5px;word-break:normal;}
+.tg .tg-zlyv{text-align:left;vertical-align:top}
+
+
+.myButton4 {
+box-shadow:inset 0px 1px 0px 0px #dcecfb;
+background:linear-gradient(to bottom, #bddbfa 5%, #11cc20; 100%);
+background-color:#11cc20;
+border-radius:6px;
+border:1px solid #11cc20;
+display:inline-block;
+cursor:pointer;
+color:#1f1c1f;
+font-family:Arial;
+font-size:15px;
+font-weight:bold;
+padding:6px 24px;
+text-decoration:none;
+text-shadow:0px 1px 0px #528ecc;
+}
+.myButton4:hover {
+background:linear-gradient(to bottom, #80b5ea 5%, #bddbfa 100%);
+background-color:#80b5ea;
+}
+.myButton4:active {
+position:relative;
+top:1px;
+}
+.campoTarea{
+    background-color: rgb(30, 88, 6);
+    border-radius: 5px;
+    height: 30px;
+    box-shadow: 5px 5px 5px 5px #12aa5e;
+}

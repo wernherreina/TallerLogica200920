@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="eng">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./assets/style.css/style.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+   <title>Taller Logíca 20-09-20</title>
+
+</head>
+
+<body class="wallpaper">
+    
+    <main>
+
+
+  
+    <form class="formContact" onsubmit="validarFormulario(event)">  
+        <div class="contInput">         
+            <label for="">Nombre</label>
+            <input type="text" id="name" placeholder=" Nombre">   
+            <small id="mensajeAlertaNombre" class="mensajeAlertaNombre"></small>            
+        </div>
+
+        <div class="contInput">         
+            <label for="">Apellido</label>
+            <input type="text" id="apellido" placeholder=" Apellido">
+        </div>
+
+        <div class="contInput">  
+            <label for="">Correo</label>
+            <input type="email" id="correo" placeholder="email">   
+            <small id="mensajeAlertaCorreo" class="mensajeAlertaCorreo"></small>                
+        </div>
+
+        <div class="contInput">
+            <label for="">Contraseña</label>
+            <input type="password" id="pwd" placeholder="contraseña">
+            <small id="mensajeAlertaPwd" class="mensajeAlertapwd"></small>   
+        </div>
+
+
+        <div class="contInput">
+            <label for="">Edad</label>
+            <input type="number" id="edad" placeholder="Digite edad">             
+        </div>
+
+        <div class="contInput  inputTyC">
+            <label for="inputTyC">Acepta Terminos y condiciones</label>
+            <input type="checkbox" id="inputTyC">
+                      
+        </div>
+
+        <small id="mensajeAlertaTyC" class="mensajeAlertaInputs"></small>   
+
+        <input type="submit" value="Enviar" class="btnEnviar">
+
+    </form>
+   
+        
+        <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+        <script src="./assets/scripts/script.js"></script>
+    </main>
+
+    <div class="cabeza">
+        <h5>Taller Logíca 20-09-20   Bictia</h5>
+        <small>1. Hacer un formulario con validaciones en los campos, nombre, correo, contraseña ( se pueden agregar más campos ). Esta información se debe guardar en el storage.
+            <br>2. Una vez el registro sea exitoso llevar a una página de login, donde se deberán validar los datos de correo y contraseña del local storage.
+            <br> 3. Luego de pasar el login debe llevarlo a una página, donde se empecerá a registrar un to-do de tareas, donde las listas se podrán ingresar por medio de un input, pero las tareas de cada lista deberán ingresarse por medio de un teclado digital 
+        <span id="1Nombre"> </span> </small> 
+    </div>
+
+    
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+    integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous">
+  </script>
+  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"
+    integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous">
+  </script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"
+    integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous">
+  </script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.bundle.min.js"></script>
+</body>
+
+
+</html>
